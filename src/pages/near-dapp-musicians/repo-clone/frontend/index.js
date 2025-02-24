@@ -12,3 +12,4 @@ window.nearInitPromise = initContract()
     root.render(<App tab="home" />)
   })
   .catch(console.error) */
+  export default function getridofbuilderror() {}
