@@ -21,13 +21,13 @@ export default function HelloNear() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [showSpinner, setShowSpinner] = useState(false);
   const [songCatalog, setSongCatalog] = useState([]);
-  
+
 
   useEffect(() => {
     if (!wallet) return;
 
     wallet.viewMethod({ contractId: CONTRACT, method: 'get_song_catalog' }).then(
-      song_catalog => /* setGreeting(song_catalog) */ {console.log(song_catalog); setSongCatalog(song_catalog);}
+      song_catalog => /* setGreeting(song_catalog) */ { console.log(song_catalog); setSongCatalog(song_catalog); }
     );
   }, [wallet]);
 
@@ -53,37 +53,17 @@ export default function HelloNear() {
       </div>
 
       <div className={styles.center}>
-        <h1 className="w-100">
-          The contract says: <code>{greeting}</code>
-        </h1>
-        <div className="input-group" hidden={!loggedIn}>
-          <input
-            type="text"
-            className="form-control w-20"
-            placeholder="Store a new greeting"
-            onChange={t => setNewGreeting(t.target.value)}
-          />
-          <div className="input-group-append">
-            <button className="btn btn-secondary" onClick={saveGreeting}>
-              <span hidden={showSpinner}> Save </span>
-              <i
-                className="spinner-border spinner-border-sm"
-                hidden={!showSpinner}
-              ></i>
-            </button>
-          </div>
-        </div>
+
         <div className="w-100 text-end align-text-center" hidden={loggedIn}>
-          <p className="m-0"> Please login to change the greeting </p>
+          <p className="m-0"> Please login </p>
         </div>
       </div>
-        
+
       {/*   <Header /> */}
-{/*         <AddSong add_song_info={add_song_info} get_song_catalog={get_song_catalog} addSongInfo={addSongInfo} />
+      {/*         <AddSong add_song_info={add_song_info} get_song_catalog={get_song_catalog} addSongInfo={addSongInfo} />
  */}        <hr />
-        <SongList song_catalog={songCatalog} />
-      
-      <Cards />
+      <SongList song_catalog={songCatalog} />
+
     </main>
   );
 }
