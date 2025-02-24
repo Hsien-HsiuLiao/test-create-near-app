@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App'
 import { initContract } from './assets/js/near/utils'
@@ -11,4 +11,4 @@ window.nearInitPromise = initContract()
     <App />
     root.render(<App tab="home" />)
   })
-  .catch(console.error)
+  .catch(console.error) */
