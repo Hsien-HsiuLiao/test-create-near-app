@@ -51,7 +51,7 @@ export default function App() {
           Please sign in using the NEAR Wallet. Click the Sign In button below.
         </p>
         <p>
-          This app runs in the test network ("testnet").
+          This app runs in the test network (testnet).
         </p>
         <p style={{ textAlign: 'center', marginTop: '2.5em' }}>
           <button onClick={login}>Sign in</button>
