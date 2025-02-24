@@ -6,7 +6,9 @@ import { HelloNearContract } from '../../config';
 import { Cards } from '@/components/cards';
 
 // Contract that the app will interact with
-const CONTRACT = HelloNearContract;
+//const CONTRACT = HelloNearContract;
+const CONTRACT = 'dev-1658968177124-13082461676051';
+
 
 export default function HelloNear() {
   const { signedAccountId, wallet } = useContext(NearContext);
@@ -19,8 +21,8 @@ export default function HelloNear() {
   useEffect(() => {
     if (!wallet) return;
 
-    wallet.viewMethod({ contractId: CONTRACT, method: 'get_greeting' }).then(
-      greeting => setGreeting(greeting)
+    wallet.viewMethod({ contractId: CONTRACT, method: 'get_song_catalog' }).then(
+      song_catalog => /* setGreeting(song_catalog) */ console.log(song_catalog)
     );
   }, [wallet]);
 
