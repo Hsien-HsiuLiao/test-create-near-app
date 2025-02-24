@@ -4,9 +4,9 @@ import { NearContext } from '@/wallets/near';
 import styles from '@/styles/app.module.css';
 import { HelloNearContract } from '../../config';
 import { Cards } from '@/components/cards';
-import Header from './components/js/Header.js';
-import SongList from './components/js/SongList.js';
-import AddSong from './components/js/AddSong';
+import Header from '../../components/near-dapp-musicians/js/Header.js';
+import SongList from '../../components/near-dapp-musicians/js/SongList.js';
+import AddSong from '../../components/near-dapp-musicians/js/AddSong';
 
 // Contract that the app will interact with
 //const CONTRACT = HelloNearContract;
