@@ -1,5 +1,5 @@
 import React from 'react';
-import getConfig from './near/config';
+import getConfig from './lib/config';
 
 function Notification() {
     const { networkId } = getConfig(process.env.NODE_ENV || 'development')

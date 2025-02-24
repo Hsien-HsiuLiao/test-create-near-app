@@ -1,5 +1,5 @@
 import React from 'react';
-import { buy_song } from './near/utils'
+import { buy_song } from './lib/utils'
 
 function SongList({ song_catalog }) {
     const buySong = async (songinfo, artist) => {
