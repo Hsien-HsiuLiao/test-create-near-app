@@ -1,4 +1,4 @@
-import 'regenerator-runtime/runtime'
+/* import 'regenerator-runtime/runtime'
 import React, { useState, useCallback, useEffect } from 'react'
 
 import './assets/css/global.css'
@@ -94,3 +94,4 @@ export default function App() {
 }
 
 
+ */
