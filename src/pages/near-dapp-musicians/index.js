@@ -4,6 +4,9 @@ import { NearContext } from '@/wallets/near';
 import styles from '@/styles/app.module.css';
 import { HelloNearContract } from '../../config';
 import { Cards } from '@/components/cards';
+import Header from './assets/js/Header.js';
+import SongList from './assets/js/SongList.js';
+import AddSong from './assets/js/AddSong';
 
 // Contract that the app will interact with
 //const CONTRACT = HelloNearContract;
@@ -17,12 +20,14 @@ export default function HelloNear() {
   const [newGreeting, setNewGreeting] = useState('loading...');
   const [loggedIn, setLoggedIn] = useState(false);
   const [showSpinner, setShowSpinner] = useState(false);
+  const [songCatalog, setSongCatalog] = useState([]);
+  
 
   useEffect(() => {
     if (!wallet) return;
 
     wallet.viewMethod({ contractId: CONTRACT, method: 'get_song_catalog' }).then(
-      song_catalog => /* setGreeting(song_catalog) */ console.log(song_catalog)
+      song_catalog => /* setGreeting(song_catalog) */ {console.log(song_catalog); setSongCatalog(song_catalog);}
     );
   }, [wallet]);
 
@@ -72,6 +77,12 @@ export default function HelloNear() {
           <p className="m-0"> Please login to change the greeting </p>
         </div>
       </div>
+        
+      {/*   <Header /> */}
+{/*         <AddSong add_song_info={add_song_info} get_song_catalog={get_song_catalog} addSongInfo={addSongInfo} />
+ */}        <hr />
+        <SongList song_catalog={songCatalog} />
+      
       <Cards />
     </main>
   );
